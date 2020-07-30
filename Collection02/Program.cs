@@ -20,6 +20,13 @@ namespace Collection02
             Console.WriteLine(list.Size);
 
             Console.WriteLine(list[4]);
+            Console.WriteLine("--04--");
+            var arr = list.GetArray();
+
+            foreach (var i in arr)
+            {
+                Console.WriteLine(i);
+            }
         }
     }
 }
