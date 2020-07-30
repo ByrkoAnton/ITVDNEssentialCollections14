@@ -36,11 +36,6 @@ namespace Collection03
             }
         }
 
-        //public  string ToString(IEnumerable val  )
-        //{
-        //    return $"key = {keys.} "
-        //}
-
         public void Add(TKey key, TValue value)
         {
             if (keys != null)
