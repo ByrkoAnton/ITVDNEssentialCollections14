@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Net.Http.Headers;
 
 namespace Collection03
 {
@@ -15,7 +17,12 @@ namespace Collection03
             myDictionary.Add(4, "d");
             Console.WriteLine(myDictionary.Size);
 
-            foreach(var i in myDictionary)
+            foreach (KeyValuePair<TKey, TValue> i in myDictionary)
+            {
+                
+            }
+
+            foreach (var i in myDictionary)
             {
                 Console.WriteLine(i);
             }

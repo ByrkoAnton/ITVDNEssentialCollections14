@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Channels;
 
 namespace Collection03
 {
@@ -21,18 +22,16 @@ namespace Collection03
             }
         }
 
-        public IEnumerable this[int idx]
+        public string this[int index]
         {
             get
             {
-                if (idx >= keys.Length)
+                if (index >= 0 && index < keys.Length)
                 {
-                    Console.WriteLine($"No elem by this idx. Will return the last element in position [{keys.Length - 1}]");
-                   yield return keys[^1];
-                   yield return values[^1];
+                    return keys[index] + " - " + values[index];
+
                 }
-                yield return keys[idx];
-                yield return values[idx];
+                return "Попытка обращения за пределы массива.";
             }
         }
 
@@ -55,9 +54,20 @@ namespace Collection03
             }
             else
             {
-                keys = new[] {key};
-                values = new TValue[] {value};
+                keys = new[] { key };
+                values = new TValue[] { value };
             }
+        }
+
+        public void AddByIdx(int index, TKey key, TValue value)
+        {
+            if (index >= 0 && index < keys.Length)
+            {
+                keys[index] = key;
+                values[index] = value;
+            }
+            else
+                Console.WriteLine("Попытка обращения за пределы массива.");
         }
 
         public IEnumerator<TValue> GetEnumerator()

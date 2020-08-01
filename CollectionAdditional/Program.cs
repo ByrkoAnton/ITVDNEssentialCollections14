@@ -8,7 +8,7 @@ namespace CollectionAdditional
         static void Main(string[] args)
         {
             int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-            var b = GetCollection(a);
+            var b = GetEvens(a);
 
             foreach (var i in a)
             {
@@ -23,7 +23,7 @@ namespace CollectionAdditional
             }
         }
 
-        public static  IEnumerable GetCollection(int[] arr)
+        public static  IEnumerable GetEvens(int[] arr)
         {
             foreach (var i in arr)
             {
